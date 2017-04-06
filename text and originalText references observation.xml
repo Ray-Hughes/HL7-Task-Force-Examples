@@ -3,14 +3,14 @@
 	<section>
 		<!--  ... -->
 		<text>
-			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. A mixture of paragraph, table, and lists will be used for this text section, but their use is to just illustrate different referncing techniques. -->
-			<!-- this table is used for a simple observation -->
+			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text.  -->
+			<!-- this table is used for a simple observation; the ID values are meant to be unique across the whole document -->
 			<table>
 				<tbody>
-					<tr ID="simpleObservationFullTextReference">
+					<tr ID="simpleObservationFullTextReference1">
 						<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-						<td ID="simpleObservationCodeReference">Proin facilisis iaculis nisi, luctus aliquam metus.</td>
-						<td ID="simpleObservationValueReference">Duis id consequat arcu, sit amet fermentum leo.</td>
+						<td ID="simpleObservationCodeReference1">Proin facilisis iaculis nisi, luctus aliquam metus.</td>
+						<td ID="simpleObservationValueReference1">Duis id consequat arcu, sit amet fermentum leo.</td>
 					</tr>
 				</tbody>
 			</table>
@@ -27,7 +27,7 @@
 									<!--	notice that the referenced text is similar to but different than the @displayName  of the code element
 											from an interoperability perspective, this pattern is a SHOULD as access to the human readable text reflecting the (code, codeSystem) in use is beneficial to consuming systems
 									-->
-									<reference value="#simpleObservationCodeReference"/>
+									<reference value="#simpleObservationCodeReference1"/>
 					</originalText>
 				</code>
 				<!-- when present, the text/reference points to the entire text of the act 
@@ -38,7 +38,7 @@
 										in this case, the element is a tr, but might be a table, tbody, etc....elements that typically wrap more entire concepts, not just pieces of content
 									Example referenced content, using Tobacco Use: Ex-heavy cigarette smoker 20 to 39 per day Recorded: Jan-1988 Comment: suspect still smoking on occasion.
 								-->
-					<reference value="#simpleObservationFullTextReference"/>
+					<reference value="#simpleObservationFullTextReference1"/>
 				</text>
 				<!-- ... -->
 				<value xsi:type="CD" code="3456" codeSystem="1.2.3.4.5.6.7.8.42" displayName="duis id consequat">
@@ -51,7 +51,7 @@
 											Example referenced content, using Tobacco Use: Ex-heavy cigarette smoker 20 to 39 per day
 												(where the (code, codeSystem) on the value element would be (266924008, 2.16.840.1.113883.6.96))
 									-->
-						<reference value="#simpleObservationValueReference"/>
+						<reference value="#simpleObservationValueReference1"/>
 					</originalText>
 				</value>
 			</observation>

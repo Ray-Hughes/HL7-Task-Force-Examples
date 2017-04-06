@@ -3,10 +3,10 @@
 	<section>
 		<!--  ... -->
 		<text>
-			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. A mixture of paragraph, table, and lists will be used for this text section, but their use is to just illustrate different referncing techniques. -->
-			<!-- this list is used for a simple supply -->
+			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text.  -->
+			<!-- this list is used for a simple supply; the ID values are meant to be unique across the whole document -->
 			<list>
-				<item ID="NonMedicinalSupplyFullTextReference">Maecenas nec odio et ante tincidunt tempus.</item>
+				<item ID="NonMedicinalSupplyFullTextReference1">Maecenas nec odio et ante tincidunt tempus.</item>
 			</list>
 		</text>
 		<!-- This illustrates a simple supply. in C-CDA this is used as a Non-Medicinal Supply Activity, a Planned Supply, or via entryRelationships as various supply activities. -->
@@ -15,7 +15,7 @@
 				<!-- ... -->
 				<!-- Example, using non-medicinal supply: VVV Cardiac Pacemaker 22-Feb2016 to 26-Feb-2016 Status: normal Quantity: 1 Supplied: yes -->
 				<text>
-					<reference value="#NonMedicinalSupplyFullTextReference"/>
+					<reference value="#NonMedicinalSupplyFullTextReference1"/>
 				</text>
 				<!-- ... -->
 			</supply>

@@ -3,13 +3,13 @@
 	<section>
 		<!--  ... -->
 		<text>
-			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. A mixture of paragraph, table, and lists will be used for this text section, but their use is to just illustrate different referncing techniques. -->
-			<!-- this table used for an organizer and components -->
+			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. -->
+			<!-- this table used for an organizer and components; the ID values are meant to be unique across the whole document -->
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<content ID="ResultOrganizerCodeTextReference">Lorem ipsum dolor sit amet</content>
+							<content ID="ResultOrganizerCodeTextReference1">Lorem ipsum dolor sit amet</content>
 						</td>
 						<td>
 							<content>labetText: </content>
@@ -21,17 +21,17 @@
 							<!-- ... -->
 						</td>
 					</tr>
-					<tr ID="ResultComponentFullTextReference">
+					<tr ID="ResultComponentFullTextReference1">
 						<td>
 						</td>
 						<td>
-							<content ID="ResultComponentCodeTextReference">Proin iaculis tempus justo</content>
+							<content ID="ResultComponentCodeTextReference1">Proin iaculis tempus justo</content>
 							<content> nn</content>
 							<content> UCUM_Units</content>
-							<content ID="ResultComponentInterpretationCodeTextReference"> (Semper)</content>
+							<content ID="ResultComponentInterpretationCodeTextReference1"> (Semper)</content>
 						</td>
 						<td>
-							<content ID="ResultComponentReferenceRangeTextReference">
+							<content ID="ResultComponentReferenceRangeTextReference1">
 								<content>labelText: </content>
 								<content>111</content>
 								<content> {MG/DL}</content>
@@ -41,10 +41,10 @@
 							</content>
 							<br/>
 							<content>labeltext: </content>
-							<content ID="ResultComponentMethodCodeTextReference">Elementum </content>
+							<content ID="ResultComponentMethodCodeTextReference1">Elementum </content>
 							<br/>
 							<content>labelText: </content>
-							<content ID="ResultComponentSiteCodeTextReference">Tincidunt </content>
+							<content ID="ResultComponentSiteCodeTextReference1">Tincidunt </content>
 							<br/>
 							<!-- ... -->
 						</td>
@@ -59,7 +59,7 @@
 				<!-- ... -->
 				<code code="nnnn" codeSystem="1.2.3.4.5.6.7.8.42" displayName="lorem ipsum">
 					<originalText>
-						<reference value="#ResultOrganizerCodeTextReference"/>
+						<reference value="#ResultOrganizerCodeTextReference1"/>
 					</originalText>
 				</code>							
 				<statusCode code="completed"/>
@@ -69,34 +69,34 @@
 						<!-- ... -->
 						<code code="nnnn" codeSystem="1.2.3.4.5.6.7.8.42" displayName="proin iaculis">
 							<originalText>
-								<reference value="#ResultComponentCodeTextReference"/>
+								<reference value="#ResultComponentCodeTextReference1"/>
 							</originalText>
 						</code>
 						<!-- Example, from results: WBC 21 10^3/ul (High) Range: 100	 mg/dL - 900 mg/dL Method: PICC Line Site: Site Right Arm Comments: Specimen Lysed -->
 						<text>
-							<reference value="#ResultComponentFullTextReference"/>
+							<reference value="#ResultComponentFullTextReference1"/>
 						</text>
 						<!-- .... -->
 						<interpretationCode code="x" codeSystem="1.2.3.4.5.6.7.8.42" displayName="semper">
 							<originalText>
-								<reference value="#ResultComponentInterpretationCodeTextReference"/>
+								<reference value="#ResultComponentInterpretationCodeTextReference1"/>
 							</originalText>
 						</interpretationCode>
 						<methodCode code="nnnn" codeSystem="2.16.840.1.113883.6.96" displayName="elementum ">
 							<originalText>
-								<reference value="#ResultComponentMethodCodeTextReference"/>
+								<reference value="#ResultComponentMethodCodeTextReference1"/>
 							</originalText>
 						</methodCode>
 						<targetSiteCode code="nnnn" codeSystem="2.16.840.1.113883.6.96" displayName="tincidunt ">
 							<originalText>
-								<reference value="#ResultComponentSiteCodeTextReference"/>
+								<reference value="#ResultComponentSiteCodeTextReference1"/>
 							</originalText>
 						</targetSiteCode>
 						<!-- ... -->
 						<referenceRange>
 							<observationRange>
 								<text>
-									<reference value="#ResultComponentReferenceRangeTextReference"/>
+									<reference value="#ResultComponentReferenceRangeTextReference1"/>
 								</text>
 								<value xsi:type="IVL_PQ">
 									<low value="111" unit="UCUM_UNIT"/>

@@ -3,19 +3,15 @@
 	<section>
 		<!--  ... -->
 		<text>
-			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. A mixture of paragraph, table, and lists will be used for this text section, but their use is to just illustrate different referncing techniques. -->
-			<!-- this table is used for an encounter -->
+			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text.  -->
+			<!-- this table is used for an encounter; the ID values are meant to be unique across the whole document -->
 			<table>
 				<tbody>
-					<tr ID="encounterFullTextReference">
+					<tr ID="encounterFullTextReference1">
 						<td>
-							<content ID="encounterCodeReference">Praesent vitae dignissim risus</content>
+							<content ID="encounterCodeReference1">Praesent vitae dignissim risus</content>
 							<br/>
-							<content>labeltext: </content>
-							<content ID="encounterChildRelationshipReference">Praesent efficitur ullamcorper ullamcorper</content>
-							<br/>
-							<content>labeltext: </content>
-							<content ID="encounterChildRelationshipReference2">Curabitur semper porttitor felis</content>
+							<!-- ... -->
 						</td>
 						<td>
 							<content>mightBeSomeDate </content>
@@ -30,12 +26,9 @@
 						</td>
 						<td>
 							<content>labeltext: </content>
-							<content ID="encounterDischargeDispositionCodeRef">Pellentesque pellentesque ipsum id tincidunt venenatis.</content>
+							<content ID="encounterDischargeDispositionCodeRef1">Pellentesque pellentesque ipsum id tincidunt venenatis.</content>
 							<br/>
-							<content>
-								<content>labeltext:</content>
-								<content styleCode="xSecondary" ID="encounterCommentActivityReference">Vestibulum nunc nisl, vulputate eget ornare eget, blandit ut ex.</content>
-							</content>
+							<!-- ... -->
 						</td>
 					</tr>
 				</tbody>
@@ -51,13 +44,13 @@
 						<!-- Example of referenced text: ED Visit 
 											note that the reference is does not include the label in the human readable content; we do not want the reference to return labelText: ED Visit
 									-->
-						<reference value="#encounterCodeReference"/>
+						<reference value="#encounterCodeReference1"/>
 					</originalText>
 				</code>
 				<!-- a reference to the entire human readable text of the encounter is useful -->
 				<text>
 					<!-- Example of referenced text: ED Visit Encounter Reason: Acute Anxiety Encounter Diagnosis: Acute onset Anxiety 10/11/14 Acupun, Allison Rex ED 3000 New Bern Ave Raleigh 27610 tel:+1-(919)350-8000 Discharge Disposition: Discharged/transferred to an intermediate-care facility (ICF) Comments: noted uncontrollable rocking -->
-					<reference value="#encounterFullTextReference"/>
+					<reference value="#encounterFullTextReference1"/>
 				</text>
 				<!-- ... -->
 				<!-- if there is a discharge disposition for the encounter, and there is human readable content reflecting the code, then the originalText/reference SHOULD be present 
@@ -65,7 +58,7 @@
 							-->
 				<sdtc:dischargeDispositionCode code="xx" codeSystem="1.2.3.4.5.6.7.8.42">
 					<originalText>
-						<reference value="#encounterDischargeDispositionCodeRef"/>
+						<reference value="#encounterDischargeDispositionCodeRef1"/>
 					</originalText>
 				</sdtc:dischargeDispositionCode>
 			</encounter>

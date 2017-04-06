@@ -3,27 +3,25 @@
 	<section>
 		<!--  ... -->
 		<text>
-			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. A mixture of paragraph, table, and lists will be used for this text section, but their use is to just illustrate different referncing techniques. -->
-			<!-- this table is used for a simple procedure -->
+			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text.  -->
+			<!-- this table is used for a simple procedure; the ID values are meant to be unique across the whole document -->
 			<table>
 				<tbody>
-					<tr ID="procedureFullTextReference">
+					<tr ID="procedureFullTextReference1">
 						<td>
-							<content ID="procedureCodeTextReference">Vestibulum nunc nisl</content>
+							<content ID="procedureCodeTextReference1">Vestibulum nunc nisl</content>
 						</td>
 						<td>
 							<content>labelText: </content>
 							<content>mmm DD YYYY</content>
 							<br/>
 							<content>labelText: </content>
-							<content ID="procedureSiteCodeReference">Vulputate eget  </content>
+							<content ID="procedureSiteCodeReference1">Vulputate eget  </content>
 						</td>
 						<td>
 							<content>labeltext: </content>
-							<content ID="procedureMethodCodeReference">Ornare eget </content>
+							<content ID="procedureMethodCodeReference1">Ornare eget </content>
 							<br/>
-							<content>labeltext: </content>
-							<content ID="procedureCommentTextReference">Quisque iaculis ornare tellus, at mollis arcu faucibus sed</content>
 						</td>
 					</tr>
 				</tbody>
@@ -36,26 +34,26 @@
 				<!-- the code of a procedure is significant, so also the originalText/refernece is a SHOULD -->
 				<code code="5678" codeSystem="1.2.3.4.5.6.7.8.42" displayName="praesent efficitur">
 					<originalText>
-						<reference value="#procedureCodeTextReference"/>
+						<reference value="#procedureCodeTextReference1"/>
 					</originalText>
 				</code>
 				<!-- we may reference the entire text of the procedure
 									Example: Appendectomy Date: Feb 3rd 2013 Site: Right Abdomen Method: Transverse Incision Comments: patient is NPO
 							-->
 				<text>
-					<reference value="#procedureFullTextReference"/>
+					<reference value="#procedureFullTextReference1"/>
 				</text>
 				<!-- ... -->
 				<!-- when the method of a procedure is reflected in the human readable text we SHOULD have originalText/reference -->
 				<methodCode code="6789" codeSystem="1.2.3.4.5.6.7.8.42" displayName="ornare eget">
 					<originalText>
-						<reference value="#procedureMethodCodeReference"/>
+						<reference value="#procedureMethodCodeReference1"/>
 					</originalText>
 				</methodCode>
 				<!-- when the target site of a procedure is reflected in the human readable text we SHOULD have originalText/reference -->
 				<targetSiteCode code="7890" codeSystem="1.2.3.4.5.6.7.8.42" displayName="vulputate eget">
 					<originalText>
-						<reference value="#procedureSiteCodeReference"/>
+						<reference value="#procedureSiteCodeReference1"/>
 					</originalText>
 				</targetSiteCode>
 				<!-- ... -->

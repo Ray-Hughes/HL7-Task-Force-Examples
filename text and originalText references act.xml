@@ -3,8 +3,8 @@
 	<section>
 		<!--  ... -->
 		<text>
-			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. A mixture of paragraph, table, and lists will be used for this text section, but their use is to just illustrate different referncing techniques. -->
-			<!-- this paragraph is used for a simple act -->
+			<!-- The text in this section is created strictly to illustrate how discrete entry child elements make references into the human readable text. -->
+			<!-- this paragraph is used for a simple act; the ID values are meant to be unique across the whole document -->
 			<paragraph ID="simpleActFullTextReference1">
 				<content ID="simpleActCodeReference1">Lorem ipsum dolor sit amet</content>, consectetur adipiscing elit.</paragraph>
 		</text>
@@ -35,7 +35,7 @@
 										in this case, the element is a paragraph, but might be a table, tbody, tr, etc....elements that typically wrap more entire concepts, not just pieces of content
 										Example referenced content, using Comment Activity: Patient is having difficulty paying co-pays for these medications.
 								-->
-					<reference value="#simpleActFullTextReference"/>
+					<reference value="#simpleActFullTextReference1"/>
 				</text>
 				<!-- ... -->
 			</act>
