@@ -1,0 +1,110 @@
+<?xml-stylesheet type="text/xsl" href="CDA.xsl" ?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<code code="CARETEAM" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Care Team"/>
+					<!-- Other possible types of Care Teams include:
+	Note: FHIR permits multiple codes to be used to designate the type of care team.  CDA offers less precision, and so only the XXXX Dimension code is used.
+	-->
+					<title>Care Teams</title>
+					<text>
+						<list listType="ordered">
+							<item ID="CARETEAM_1">
+								<content ID="careTeamName1" styleCode="Bold">My Care Team</content>; <content ID="careTeamFocus1">
+									<content ID="careTeamFocusNature1">Integrated</content> Care Coordination</content>; <content ID="careTeamSetting1">Personal</content>; <content ID="careTeamTimeFrame1">From 1996 to present</content>
+								<table>
+									<thead>
+										<tr>
+											<th>Who</th>
+											<th>When</th>
+											<th>Where</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<content ID="careTeam1person1Name" styleCode="Bold">Dr. Uel B. Better</content>
+												<br/>PCP<br/>Overall Coordination<br/>NPI: 1245319599<br/>100 Main St. Suite 100, Hope Valley, RI 02832<br/>(401)539-2461<br/>ubbetter@direct.aclinic.org
+										</td>
+											<td>From: Aug 1, 2016</td>
+											<td>Hope Woods Health Services<br/>823 Main St., Hope Woods, RI 02832<br/>(401)567-2345<br/>info@hopewoodshealthservices.com</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="careTeam1person2Name" styleCode="Bold">Dr. Fiora W. Omen</content>
+												<br/>Gynecologist<br/>Mammogram and Pap Tests<br/>NPI: 1245319607<br/>
+											</td>
+											<td>From: 1999</td>
+											<td>Center for Womens Health<br/>70 Healthcare Ave, Unit 100, Wakefield, RI 02879<br/>(401)789-1234</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="careTeam1person3Name" styleCode="Bold">Beatrice Strong</content>
+												<br/>Physical Therapist<br/>Physical Therapy<br/>NPI: 1245319615<br/>BeStrongPTN@FirstChoicePhysical.Direct.MD</td>
+											<td>From: 2009 </td>
+											<td>First Choice Physical Therapy<br/>85 Ocean Street, #1, Westerly, RI 02891<br/>(401)543-1111<br/>Admin@FirstChoicePhysical.Direct.MD</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="careTeam1person4Name" styleCode="Bold">Reverend Will Namaste</content>
+												<br/>Pastor<br/>Spiritual Health<br/>(987)123-1234<br/>Will.Namaste123@gmail.com</td>
+											<td>From: 2016 </td>
+											<td>Four Corners Community Church Presbyterian<br/>221 New Town Road, Westerly, RI 02891<br/>(401)543-7777<br/>Office@FCCCP.org</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="careTeam1person5Name" styleCode="Bold">Dr. Patricia Primary</content>
+												<br/>PCP<br/>Consultation<br/>NPI: 1245319623</td>
+											<td>From: Jan 1, 2000 - TO: July 31, 2016 </td>
+											<td>ML Medical Group<br/>91 Voluntown Road, Pawcatuck, CT 06379<br/>(806)599-5477<br/>MLMG@MLMG.Direct.MD</td>
+										</tr>
+									</tbody>
+								</table>
+							</item>
+							<item ID="CARETEAM_2">
+								<content ID="careTeamName1" styleCode="Bold">Shoulder Injury Care Team</content>; <content ID="careTeamFocus1">
+									<content ID="careTeamFocusNature1">Condition</content> right rotator cuff (disorder)</content>; <content ID="careTeamSetting1">Specialty</content>; <content ID="careTeamTimeFrame1">From October 1, 2016 to present</content>
+								<table>
+									<thead>
+										<tr>
+											<th>Who</th>
+											<th>When</th>
+											<th>Where</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<content ID="careTeam2person1Name" styleCode="Bold">Beatrice Strong</content>
+												<br/>Physical Therapist<br/>Shoulder Rehabilitation<br/>NPI: 1245319615<br/>BeStrongPTN@FirstChoicePhysical.Direct.MD
+										</td>
+											<td>From: 2009</td>
+											<td>First Choice Physical Therapy<br/>85 Ocean Street, #1, Westerly, RI 02891<br/>(401)543-1111<br/>Admin@FirstChoicePhysical.Direct.MD</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="careTeam2person2Name" styleCode="Bold">Dr. S. Teddy Hands</content>
+												<br/>Orthopedic Surgeon<br/>Consultation<br/>NPI: 1245319631<br/>
+											</td>
+											<td>From: November 10, 2016 to November 10, 2016</td>
+											<td>Bayview Orthopedic Associates<br/>123 Airport Ave, Westerly, RI 02891<br/>(401)543-0123</td>
+										</tr>
+										<tr>
+											<td>
+												<content ID="careTeam2person3Name" styleCode="Bold">Beau D. Stretch</content>
+												<br/>Personal Trainer<br/>Establish/monitor gym workout plan<br/>YMCA, 123 Healthy Way, Westerly, RI 02891<br/>DBStretch@FirstChoicePhysical.Direct.MD</td>
+											<td>From: January 5, 2017</td>
+											<td>First Choice Physical Therapy<br/>85 Ocean Street, #1, Westerly, RI 02891<br/>(401)543-1111<br/>Admin@FirstChoicePhysical.Direct.MD</td>
+										</tr>
+									</tbody>
+								</table>
+							</item>
+						</list>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
