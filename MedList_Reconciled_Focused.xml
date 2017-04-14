@@ -1,0 +1,111 @@
+<!-- A Reconciled Medication section
+
+		The following is based on the IHE Reconciliation of Clinical Content and Care Providers (RECON) - Revised 2016-11-11 profile
+				http://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_RECON.pdf
+
+		Indicating that a section (list) has been reconciled is accomplished by two levels of content, one required and one optional:
+			1) Required: human readable text
+				from IHE RECON: For every reconciled list within the document, the human readable text SHALL contain some indication that the list was reconciled, by whom and when the reconciliation occurred.
+			2) Optional: a Reconciliation Act for each section that is reconciled
+				from IHE RECON: SHOULD support the Reconciliation Content Option
+
+		See: Figure X-1: Example of a Reconciled Medication List in the IHE RECON profile for a nice visual.
+
+		It is important to recognize that this is reconciliation of all items in the section, not of some items within the section. One reconciles the whole (medication, problem, allergy, ...providers) list
+			i.e., your original list is compared to some other list to produce this new, reconciled list.
+
+	For purposes of this example, the text of the medications, and the entries for each, are removed so we can focus on the 2 indocations of reconciliation.
+-->
+<section>
+	<templateId root="2.16.840.1.113883.10.20.22.2.1" extension="2014-06-09"/>
+	<templateId root="2.16.840.1.113883.10.20.22.2.1"/>
+	<templateId root="2.16.840.1.113883.10.20.22.2.1.1" extension="2014-06-09"/>
+	<templateId root="2.16.840.1.113883.10.20.22.2.1.1"/>
+	<code code="10160-0" codeSystem="2.16.840.1.113883.6.1"/>
+	<title>Medications</title>
+	<text>
+		<!-- This is where the medications would be listed.
+				no text is shown here because this is simply the typical list, however one constructs the list of medications.
+		-->
+		....
+		<!-- The following paragraph provides the RECON detail that the list was reconciled, by whom, and when.
+				Use of <paragraph>, and @styleCode list, is only for illustration purposes....any vaid html construct may be used: the requirement is to show that the list was reconciled, by whom and when.
+				This meets requirement 1) human readable text.
+		 -->
+		<paragraph ID="_98940fd5-eacb-4d22-b906-57be77b279c2" styleCode="xSecondary xReconciliation Italics">Reconciled by Dr Penny Puffer on 09 March 2017 10:15AM EST</paragraph>
+	</text>
+	<!--	Here is where the <entry> elements would exist, showing the <substanceAdministration> details for medications in the list
+			Not shown here because there is not detail in those <entry> elements that relates to the reconciliation of the list
+	-->
+	<!-- OPTIONAL: the following entry is the Reconciliation Act, from IHE RECON 6.3.1.D, with details in 6.3.4.E 
+				When a Content Creator supports the Reconciliation Content Option, then there SHALL be at least one Reconciliation Act in the ClinicalDocument to indicate where common observations, diagnostic results, problems, allergies, medications, immunizations, and professional services entries have been reconciled.
+
+		NOTE that the IHE RECON profile has a requirement that the ClinicalDocument contain the following templateId to declare conformance to the profile: <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.1"/>
+
+			A	document supporting the Reconciliation Content Option would start with:
+					<ClinicalDocument xmlns='urn:hl7-org:v3'>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.1"/>
+						…
+					</ClinicalDocument>
+	-->
+	<entry>
+		<!-- This is the reconciliation act identifying the data sources used for reconciliation and the performer.
+					This meets the Optional #2 indication.
+		 -->
+		<act classCode="ACT" moodCode="EVN">
+			<!-- the IHE Reconciliation Act templateId -->
+			<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.1"/>
+			<!-- each act of reconciliation has a unique identifier -->
+			<id root="1.3.6.1.4.1.22812.18.99930.3.10" extension="09876"/>
+			<!-- the code element indicates, redundantly in this case, the content that is reconciled: a med list -->
+			<code code="MEDREC" codeSystem="1.3.6.1.4.1.19376.1.5.3.2"/>
+			<text>
+				<!-- a reference to the reconciliation act text is required, and the text SHALL contain who performed the reconciliation and when -->
+				<reference value="#_98940fd5-eacb-4d22-b906-57be77b279c2"/>
+			</text>
+			<statusCode code="completed"/>
+			<!-- the snapshot time when reconciliation took place; required to be a TS, precise to at least the day -->
+			<effectiveTime value="20170309101500-0500"/>
+			<!-- at least one performer is required -->
+			<performer typeCode="PRF">
+				<!-- the IHE reconciliation act performer templateId -->
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5"/>
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5.1"/>				
+				<assignedEntity>
+					<!-- at least one id is required -->
+					<id extension="90000" root="1.3.6.1.4.1.22812.18.99930.3"/>
+					<id extension="2222222222" root="2.16.840.1.113883.4.6"/>
+					<!-- Dr Puffer is an Internal Medicine provider -->
+					<code code="207R00000X" codeSystem="2.16.840.1.113883.6.101"/>
+					<addr>
+						<streetAddressLine>1047 Healthcare Drive</streetAddressLine>
+						<city>Portland</city>
+						<state>OR</state>
+						<postalCode>97005</postalCode>
+					</addr>
+					<telecom value="tel:+1-(555)555-1049"/>
+					<assignedPerson>
+						<name>
+							<family>Puffer</family>
+							<given>Penny</given>
+							<prefix>Dr</prefix>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+			<!-- at least one data source must be referenced -->
+			<reference typeCode="XCRPT">
+				<!-- the IHE RECON reconciliation source reference templateId -->
+				<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.6"/>
+				<externalAct classCode="ACT" moodCode="EVN">
+					<!-- the sources can be: a document, the result of a query for existing data, other internally stored content
+
+						this example is coded to show that the source was a document
+						see the IHE RECON, section 6.3.4.E.3 for other detail -->
+					<id root="1.3.6.1.4.1.22812.20.1.1.4.9.2.100424342"/>
+					<code code="DOCCLIN" codeSystem="2.16.840.1.113883.5.6"/>
+				</externalAct>
+			</reference>
+		</act>
+	</entry>
+</section>

@@ -3,15 +3,17 @@
 		the following is based on the IHE Reconciliation of Clinical Content and Care Providers (RECON) - Revised 2016-11-11 profile
 				http://www.ihe.net/uploadedFiles/Documents/PCC/IHE_PCC_Suppl_RECON.pdf
 
-		indicating that a list has been reconciled is accomplished by two levels of content:
+		indicating that a section (list) has been reconciled is accomplished by two levels of content:
 			1) human readable text
 				from IHE RECON: For every reconciled list within the document, the human readable text SHALL contain some indication that the list was reconciled, by whom and when the reconciliation occurred.
 			2) optionally, a discrete entry
 				from IHE RECON: SHOULD support the Reconciliation Content Option
 
-		the medications in this list come from the 2015 Certification test data for 170.315_b1_toc_amb_sample1
+		It is important to recognize that this is reconciliation of all items in the section, not of some items within the section. One reconciles the whole medication list, i.e., my original list is compared to some other list to produce this new, reconciled list.
+
+		the medications in this list come from the 2015 Certification test data for 170.315_b1_toc_amb_sample1, but doe purposes of this discussion the text of the medications and the entries for each are removed so we can focus on the 2 requirements of reconciliation.
 -->
-<!-- for brevity we are only showing the Medication Section, but NOTE that the IHE RECON profile has a requirement that the ClinicalDocument contain the following templateId to declare conformance to the prodile:
+<!-- for brevity we are only showing the Medication Section, but NOTE that the IHE RECON profile has a requirement that the ClinicalDocument contain the following templateId to declare conformance to the profile:
 		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.1"/>
 -->
 <section>
